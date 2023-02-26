@@ -1,5 +1,5 @@
 # Projectname
-projectname = "newsrv"
+projectname = "pnjk8s"
 
 # OS Image
 sourceimage = "/usr2/home/jay/src/terraform-t2/sources/ubuntu.qcow2"
@@ -27,3 +27,37 @@ hosts = {
       mac      = "52:54:00:11:11:33",
    },
 }
+
+distros        = "ubuntu"
+
+diskpool       = "default"
+
+ctlplanedisk   = 32000000000
+
+interface      = "ens01"
+
+ctlplanehosts  = 3
+
+ctlplanememory = "8192"
+
+ctlplanevcpu   = 2
+
+ctlplaneips    = ["192.168.122.21", "192.168.122.22", "192.168.122.23"]
+
+ctlplanemacs   = ["52:54:00:50:99:c5", "52:54:00:0e:87:be", "52:54:00:9d:90:38"]
+
+ctlplanenames  = ["ctlplane1", "ctlplane2", "ctlplane3"]
+
+workerhosts    = 3
+
+workerdisk     = 500000000000
+
+workermemory   = "32768"
+
+workervcpu     = 8
+
+workerips      = ["192.168.122.31", "192.168.122.32", "192.168.122.33"]
+
+workermacs     = ["52:54:00:50:98:c4", "52:54:00:0d:86:bd", "52:54:00:9c:91:39"]
+
+workernames    = ["worker1", "worker2", "worker3"]
