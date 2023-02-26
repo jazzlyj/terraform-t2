@@ -82,7 +82,7 @@ resource "libvirt_cloudinit_disk" "commoninit" {
 }
 
 # Define KVM-Guest/Domain
-resource "libvirt_domain" "newvm" {
+resource "libvirt_domain" "ctlvm" {
   for_each   = var.hosts
   name   = each.value.name 
   memory = each.value.memory
@@ -107,5 +107,5 @@ resource "libvirt_domain" "newvm" {
 
 # Output results to console
 output "hostnames" {
-  value = [libvirt_domain.newvm.*]
+  value = [libvirt_domain.ctlvm.*]
 }

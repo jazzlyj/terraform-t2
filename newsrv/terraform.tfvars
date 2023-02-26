@@ -18,13 +18,29 @@ networkname = "default"    # Virtual Networks: default (=NAT)
 #    qemu-img info debian-10.3.4-20200429-openstack-amd64.qcow2
 #         virtual size: 2 GiB (2147483648 bytes)
 hosts = {
-   "newsrv" = {
-      name     = "newsrv",
-      vcpu     = 1,
-      memory   = "1024",
+   "ctlplane1" = {
+      name     = "ctlplane1",
+      vcpu     = 2,
+      memory   = "8192",
       diskpool = "default",
-      disksize = 12000000000,
-      mac      = "52:54:00:11:11:33",
+      disksize = 32000000000,
+      mac      = "52:54:00:50:99:c5",
+   },
+   "ctlplane2" = {
+      name     = "ctlplane2",
+      vcpu     = 2,
+      memory   = "8192",
+      diskpool = "default",
+      disksize = 32000000000,
+      mac      = "52:54:00:0e:87:be",
+   },
+   "ctlplane3" = {
+      name     = "ctlplane3",
+      vcpu     = 2,
+      memory   = "8192",
+      diskpool = "default",
+      disksize = 32000000000,
+      mac      = "52:54:00:9d:90:38",
    },
 }
 
@@ -48,16 +64,16 @@ ctlplanemacs   = ["52:54:00:50:99:c5", "52:54:00:0e:87:be", "52:54:00:9d:90:38"]
 
 ctlplanenames  = ["ctlplane1", "ctlplane2", "ctlplane3"]
 
-workerhosts    = 3
+# workerhosts    = 3
 
-workerdisk     = 500000000000
+# workerdisk     = 500000000000
 
-workermemory   = "32768"
+# workermemory   = "32768"
 
-workervcpu     = 8
+# workervcpu     = 8
 
-workerips      = ["192.168.122.31", "192.168.122.32", "192.168.122.33"]
+# workerips      = ["192.168.122.31", "192.168.122.32", "192.168.122.33"]
 
-workermacs     = ["52:54:00:50:98:c4", "52:54:00:0d:86:bd", "52:54:00:9c:91:39"]
+# workermacs     = ["52:54:00:50:98:c4", "52:54:00:0d:86:bd", "52:54:00:9c:91:39"]
 
-workernames    = ["worker1", "worker2", "worker3"]
+# workernames    = ["worker1", "worker2", "worker3"]
