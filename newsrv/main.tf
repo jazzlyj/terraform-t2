@@ -82,12 +82,12 @@ resource "libvirt_cloudinit_disk" "commoninit" {
 }
 
 # Define KVM-Guest/Domain
-resource "libvirt_domain" "ctlvm" {
+resource "libvirt_domain" "vm" {
   for_each   = var.hosts
-  name   = each.value.name 
-  memory = each.value.memory
-  vcpu   = each.value.vcpu
-
+  name       = each.value.name 
+  memory     = each.value.memory
+  vcpu       = each.value.vcpu
+ 
   network_interface {
     network_name   = var.networkname
     mac            = each.value.mac
@@ -107,5 +107,5 @@ resource "libvirt_domain" "ctlvm" {
 
 # Output results to console
 output "hostnames" {
-  value = [libvirt_domain.ctlvm.*]
+  value = [libvirt_domain.vm.*]
 }

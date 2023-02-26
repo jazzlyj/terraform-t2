@@ -11,6 +11,13 @@ baseimagediskpool = "default"
 domainname = "mydomain.vm"  
 networkname = "default"    # Virtual Networks: default (=NAT)
 
+
+distros        = "ubuntu"
+
+diskpool       = "default"
+
+interface      = "ens01"
+
 # Host specific settings
 # RAM size in bytes
 # Disksize in bytes (disksize must be bigger than sourceimage virtual size)
@@ -42,27 +49,46 @@ hosts = {
       disksize = 32000000000,
       mac      = "52:54:00:9d:90:38",
    },
+   "worker1" = {
+      name     = "worker1",
+      vcpu     = 8,
+      memory   = "32768",
+      diskpool = "default",
+      disksize = 500000000000,
+      mac      = "52:54:00:20:77:b4",
+   },
+   "worker2" = {
+      name     = "worker2",
+      vcpu     = 8,
+      memory   = "32768",
+      diskpool = "default",
+      disksize = 500000000000,
+      mac      = "52:54:00:0a:67:ab",
+   },
+   "worker3" = {
+      name     = "worker3",
+      vcpu     = 8,
+      memory   = "32768",
+      diskpool = "default",
+      disksize = 500000000000,
+      mac      = "52:54:00:9a:40:22",
+   },
+
 }
 
-distros        = "ubuntu"
+# ctlplanedisk   = 32000000000
 
-diskpool       = "default"
+# ctlplanehosts  = 3
 
-ctlplanedisk   = 32000000000
+# ctlplanememory = "8192"
 
-interface      = "ens01"
+# ctlplanevcpu   = 2
 
-ctlplanehosts  = 3
+# ctlplaneips    = ["192.168.122.21", "192.168.122.22", "192.168.122.23"]
 
-ctlplanememory = "8192"
+# ctlplanemacs   = ["52:54:00:50:99:c5", "52:54:00:0e:87:be", "52:54:00:9d:90:38"]
 
-ctlplanevcpu   = 2
-
-ctlplaneips    = ["192.168.122.21", "192.168.122.22", "192.168.122.23"]
-
-ctlplanemacs   = ["52:54:00:50:99:c5", "52:54:00:0e:87:be", "52:54:00:9d:90:38"]
-
-ctlplanenames  = ["ctlplane1", "ctlplane2", "ctlplane3"]
+# ctlplanenames  = ["ctlplane1", "ctlplane2", "ctlplane3"]
 
 # workerhosts    = 3
 
