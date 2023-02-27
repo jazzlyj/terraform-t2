@@ -2,7 +2,7 @@
 projectname = "pnjk8s"
 
 # OS Image
-sourceimage = "/usr2/home/jay/src/terraform-t2/sources/ubuntu.qcow2"
+sourceimage = "/usr2/home/jay/src/terraform-t2/sources/ubuntu-20-server.qcow2"
 
 # The baseimage is the source diskimage for all VMs created from the sourceimage
 baseimagediskpool = "default"
