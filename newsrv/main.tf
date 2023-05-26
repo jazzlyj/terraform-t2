@@ -91,6 +91,7 @@ resource "libvirt_domain" "vm" {
   network_interface {
     network_name   = var.networkname
     mac            = each.value.mac
+    # addresses      = each.value.addresses
     # If networkname is host-bridge do not wait for a lease
     wait_for_lease = var.networkname == "host-bridge" ? false : true
   }
